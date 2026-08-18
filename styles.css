@@ -1,0 +1,471 @@
+:root {
+  --fondo-base: #05060c;
+  --panel: rgba(12, 14, 25, 0.86);
+  --panel-claro: rgba(25, 28, 44, 0.9);
+  --texto: #f5f1df;
+  --texto-suave: #c7c2b0;
+  --linea: rgba(235, 214, 160, 0.28);
+  --dorado: #d7b46a;
+  --blanco-hueso: #fff6d6;
+  --sombra: rgba(0, 0, 0, 0.55);
+  --color-zona: #9fd4ff;
+  --color-zona-oscuro: #10192c;
+  --fondo-zona: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--texto);
+  font-family: Arial, sans-serif;
+  background-image:
+    linear-gradient(rgba(5, 6, 12, 0.15), rgba(5, 6, 12, 0.22)),
+    var(--fondo-zona),
+    radial-gradient(circle at top, var(--color-zona-oscuro), var(--fondo-base));
+  background-size: cover, cover, cover;
+  background-position: center, center, center;
+  background-attachment: fixed;
+}
+
+.zona-inicio {
+  --color-zona: #d7b46a;
+  --color-zona-oscuro: #16121f;
+  --fondo-zona: url("Imagenes/imagenes-fondos/CasaDeDioses-img-P0.png");
+}
+
+.zona-panteon-1 {
+  --color-zona: #93b7c9;
+  --color-zona-oscuro: #121721;
+  --fondo-zona: url("Imagenes/imagenes-fondos/CrucesOlvidados-img-P1.png");
+}
+
+.zona-panteon-2 {
+  --color-zona: #8ed77d;
+  --color-zona-oscuro: #0f2418;
+  --fondo-zona: url("Imagenes/imagenes-fondos/SenderoVerde-img-P2.png");
+}
+
+.zona-panteon-3 {
+  --color-zona: #75b8e6;
+  --color-zona-oscuro: #0b1728;
+  --fondo-zona: url("Imagenes/imagenes-fondos/CiudadDeLagrimas-img-P3.png");
+}
+
+.zona-panteon-4 {
+  --color-zona: #d8d4ff;
+  --color-zona-oscuro: #090914;
+  --fondo-zona: url("Imagenes/imagenes-fondos/CuencaAntigua-img-P4.png");
+}
+
+.zona-panteon-5 {
+  --color-zona: #ffe3a0;
+  --color-zona-oscuro: #1c1620;
+  --fondo-zona: url("Imagenes/imagenes-fondos/SalonDeDioses-img-P5.png");
+}
+
+.encabezado-sitio {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 30px;
+  background-color: rgba(5, 6, 12, 0.92);
+  border-bottom: 1px solid var(--linea);
+  box-shadow: 0 8px 24px var(--sombra);
+}
+
+.marca {
+  color: var(--blanco-hueso);
+  font-size: 1.45rem;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px var(--color-zona);
+}
+
+.navegacion-principal {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.navegacion-principal a,
+.tarjeta-mini,
+.pie-navegacion a {
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.navegacion-principal a {
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--texto-suave);
+}
+
+.navegacion-principal a:hover,
+.navegacion-principal .activo {
+  color: var(--blanco-hueso);
+  border-color: var(--color-zona);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+main {
+  width: min(1160px, 92%);
+  margin: 32px auto;
+}
+
+.panel,
+.tarjeta-dex,
+.panel-informacion,
+.tarjeta-mini,
+.tarjeta-jefe,
+.caja-nota {
+  border: 1px solid var(--linea);
+  background-color: var(--panel);
+  box-shadow: 0 18px 38px var(--sombra);
+}
+
+.panel,
+.panel-con-fondo {
+  position: relative;
+  margin-bottom: 26px;
+  padding: 28px;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.panel-con-fondo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.11), transparent 34%);
+  pointer-events: none;
+}
+
+.heroe,
+.distribucion-dex,
+.dos-columnas {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.heroe {
+  justify-content: space-between;
+  min-height: 360px;
+}
+
+.texto-heroe,
+.entrada-principal,
+.panel-informacion,
+.caja-nota,
+.tarjeta-mini,
+.tarjeta-jefe {
+  position: relative;
+  z-index: 1;
+}
+
+.texto-heroe {
+  max-width: 640px;
+}
+
+.ceja,
+.etiqueta,
+.numero-dex {
+  color: var(--dorado);
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: clamp(2.2rem, 5vw, 4.3rem);
+  line-height: 1;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.2);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+p,
+li {
+  color: var(--texto-suave);
+  line-height: 1.7;
+}
+
+.texto-seccion {
+  max-width: 780px;
+}
+
+.boton,
+.boton-navegacion,
+.llamada-tarjeta {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 12px 18px;
+  color: #08090f;
+  background-color: var(--color-zona);
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.boton:hover,
+.boton-navegacion:hover,
+.tarjeta-mini:hover .llamada-tarjeta {
+  background-color: var(--blanco-hueso);
+  transform: translateY(-3px);
+}
+
+.tarjeta-dex {
+  position: relative;
+  padding: 24px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.tarjeta-dex::after {
+  content: "";
+  position: absolute;
+  right: -48px;
+  bottom: -48px;
+  width: 150px;
+  height: 150px;
+  border: 18px solid rgba(255, 246, 214, 0.09);
+  border-radius: 50%;
+}
+
+.tarjeta-introduccion {
+  flex: 0 0 320px;
+  min-height: 250px;
+}
+
+.linea-estado,
+.fila-tarjetas,
+.lista-jefes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.linea-estado span {
+  padding: 6px 10px;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  color: var(--color-zona);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tarjeta-mini {
+  flex: 1 1 210px;
+  padding: 18px;
+  border-radius: 16px;
+  background-image: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(0,0,0,0.18));
+}
+
+.tarjeta-mini:hover,
+.tarjeta-jefe:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-zona);
+}
+
+.llamada-tarjeta {
+  font-size: 0.9rem;
+}
+
+.tarjeta-mini,
+.tarjeta-jefe,
+.navegacion-principal a,
+.boton,
+.boton-navegacion,
+.llamada-tarjeta {
+  transition: 0.25s;
+}
+
+.dos-columnas > *,
+.distribucion-dex > * {
+  flex: 1;
+}
+
+.caja-nota,
+.panel-informacion {
+  padding: 22px;
+  border-radius: 18px;
+  background-color: var(--panel-claro);
+}
+
+.pagina-panteon {
+  margin-top: 32px;
+}
+
+.entrada-principal {
+  flex: 2;
+}
+
+.subtitulo {
+  color: var(--color-zona);
+  font-weight: bold;
+}
+
+.dificultad {
+  margin-top: 20px;
+}
+
+.dificultad span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--texto);
+  font-weight: bold;
+}
+
+.barra {
+  height: 16px;
+  padding: 3px;
+  background-color: #05060c;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+}
+
+.relleno {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(to right, var(--color-zona), var(--dorado), #ff6b6b);
+}
+
+.panel-informacion ul {
+  padding-left: 20px;
+}
+
+.lista-jefes {
+  align-items: stretch;
+  gap: 12px;
+}
+
+.tarjeta-jefe {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: rgba(10, 12, 22, 0.9);
+}
+
+.hueco-imagen {
+  height: 175px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.08), rgba(0,0,0,0.4)),
+    radial-gradient(circle at center, rgba(255,255,255,0.06), transparent 45%);
+  border-bottom: 1px solid var(--linea);
+  overflow: hidden;
+}
+
+.imagen-agrandada {
+  height: 350px;
+}
+
+.imagen-P5 {
+  height: 400px;
+}
+
+.imagen-destello {
+  height: 900px;
+}
+
+.hueco-imagen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-size: 14px;
+  color: var(--texto-suave);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.datos-jefe {
+  padding: 18px;
+}
+
+.tarjeta-jefe h3 {
+  color: var(--texto);
+  margin: 8px 0;
+}
+
+.pie-navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 28px min(4vw, 48px);
+  border-top: 1px solid var(--linea);
+  background-color: rgba(5, 6, 12, 0.85);
+}
+
+.pie-inicio {
+  justify-content: flex-end;
+}
+
+.pie-final {
+  justify-content: flex-start;
+}
+
+@media (max-width: 760px) {
+  .encabezado-sitio,
+  .heroe,
+  .dos-columnas,
+  .distribucion-dex,
+  .pie-navegacion {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navegacion-principal {
+    justify-content: flex-start;
+  }
+
+  .tarjeta-introduccion {
+    flex-basis: auto;
+  }
+
+  .panel,
+  .panel-con-fondo {
+    padding: 20px;
+  }
+}
+
+.imagen-10 {
+  object-position: center 10%;
+}
+
+.imagen-30 {
+  object-position: center 30%;
+}
+
+.imagen-40 {
+  object-position: center 40%;
+}
+
+.imagen-55 {
+  object-position: center 55%;
+}
+
+.imagen-90 {
+  object-position: center 90%;
+}
+
+.imagen-costado-90 {
+  object-position: 90% center;
+}
